@@ -27,7 +27,7 @@ public class Song {
     private Long length;
 
     private String lyrics;
-    
+
     @JsonSerialize(using = LocalDateSerializer.class)
     @JsonDeserialize(using = LocalDateDeserializer.class)
     private LocalDate year;
