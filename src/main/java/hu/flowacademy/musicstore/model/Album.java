@@ -9,6 +9,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "album")
 @Data
+@NoArgsConstructor
 public class Album {
 
     @Id
@@ -18,4 +19,10 @@ public class Album {
     private String title;
     @Column
     private Long count;
+
+    public Album(Long id, String title, Long count) {
+        this.id = id;
+        this.title = title;
+        this.count = count;
+    }
 }

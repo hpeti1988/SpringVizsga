@@ -7,8 +7,6 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.mapping.ToOne;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -41,3 +39,5 @@ public class Song {
     @OneToOne
     private Album album;
 }
+
+
