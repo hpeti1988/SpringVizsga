@@ -1,5 +1,6 @@
 package hu.flowacademy.musicstore.service;
 
+import hu.flowacademy.musicstore.exception.ValidationException;
 import hu.flowacademy.musicstore.model.Album;
 import hu.flowacademy.musicstore.repository.AlbumRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,9 @@ public class AlbumService {
     }
 
     public Album createAlbum (Album album) {
+        if(album.getTitle() == "" || album.getTitle() == null || album.getCount() == 0) {
+            throw new ValidationException("Nem lehetnek üres mezők");
+        }
         return albumRepository.save(album);
     }
 

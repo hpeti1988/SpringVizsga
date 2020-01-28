@@ -1,23 +1,19 @@
 package hu.flowacademy.musicstore.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.Data;
+import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "artist")
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Artist {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column
     private String firstName;
-
+    @Column
     private String lastName;
 }

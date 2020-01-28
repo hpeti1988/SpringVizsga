@@ -1,5 +1,6 @@
 package hu.flowacademy.musicstore.service;
 
+import hu.flowacademy.musicstore.exception.ValidationException;
 import hu.flowacademy.musicstore.model.Artist;
 import hu.flowacademy.musicstore.repository.ArtistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,12 @@ public class ArtistService {
     }
 
     public Artist createArtist (Artist artist) {
+        if(artist.getFirstName().isEmpty() ||
+        artist.getFirstName() == null ||
+        artist.getLastName().isEmpty() ||
+        artist.getLastName() == null) {
+            throw new ValidationException("Nem lehetnek üres mezők");
+        }
         return artistRepository.save(artist);
     }
 
