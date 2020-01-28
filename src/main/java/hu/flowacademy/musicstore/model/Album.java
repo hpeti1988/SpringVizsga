@@ -14,6 +14,7 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Album {
+
     @Id
     private Long id;
 
